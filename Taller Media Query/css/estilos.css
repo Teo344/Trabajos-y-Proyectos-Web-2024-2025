@@ -1,0 +1,83 @@
+body {
+    background-color: burlywood;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0; 
+}
+.container {
+    color: aliceblue;
+    padding: 90px;
+    text-align: center; 
+}
+
+@keyframes colors {
+    0%{
+        color: black;
+    }
+    25%{
+        color: #3405a3;
+    }
+    50%{
+        color: aliceblue;
+    }
+    75%{
+        color: blue;
+    }
+    100%{
+        color: black;
+    }
+}
+
+@keyframes crecer {
+    0% {
+        transform:  scale(1);
+    }
+    50% {
+        transform: scale(1.8); 
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes moverse {
+    0% {
+     transform: translate(0px, 0px);
+    }
+
+    50% {
+        transform: translate(-60px, 200px);
+       }
+
+    100%{   
+        transform: translate(0px, 0px);
+    }
+}
+
+@media screen and (min-width: 1024px){
+    .container i{
+        animation: colors 2s linear infinite ;
+    }
+    
+}
+
+
+@media (min-width:768px) and (max-width:1023px) {
+    .container i {
+        animation: crecer 3s linear infinite;
+    }
+    body{
+        background-color: aqua;
+    }
+}
+
+@media (max-width: 767px){
+    .container i{
+        animation: moverse  5s linear infinite ;
+    }
+    body{
+        background-color: brown;
+    }
+}
