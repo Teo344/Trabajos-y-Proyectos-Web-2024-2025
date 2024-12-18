@@ -1,13 +1,13 @@
-let estudiante1 = ["Mateo", 17, 18, 14, 16, 20];
-let estudiante2 = ["Luis", 12, 2, 20, 6, 10];
-let estudiante3 = ["Ana", 17, 18, 14, 16, 20];
-let estudiante4 = ["Carlos", 17, 18, 14, 16, 20];
-let estudiante5 = ["Maria", 17, 18, 14, 16, 20];
-let estudiante6 = ["Pedro", 17, 18, 14, 16, 20];
-let estudiante7 = ["Lucia", 17, 18, 14, 16, 20];
-let estudiante8 = ["Jorge", 17, 18, 14, 16, 20];
-let estudiante9 = ["Sofia", 17, 18, 14, 16, 20];
-let estudiante10 = ["Diego", 17, 16, 10, 2, 1];
+let estudiante1 = ["Mateo", 15, 18, 16, 14, 17];
+let estudiante2 = ["Camila", 20, 19, 18, 17, 20];
+let estudiante3 = ["Luis", 10, 12, 11, 13, 10];
+let estudiante4 = ["Sofia", 18, 17, 19, 16, 20];
+let estudiante5 = ["Andrés", 14, 13, 15, 12, 14];
+let estudiante6 = ["Mariana", 19, 18, 20, 17, 19];
+let estudiante7 = ["Diego", 16, 15, 14, 18, 17];
+let estudiante8 = ["Lucia", 20, 20, 20, 20, 20];
+let estudiante9 = ["Fernando", 11, 12, 13, 10, 12];
+let estudiante10 = ["Valeria", 17, 18, 16, 19, 18];
 
 let arr =[estudiante1,estudiante2,estudiante3,estudiante4,estudiante5,estudiante6,estudiante7,estudiante8,estudiante9,estudiante10];
 
@@ -37,7 +37,7 @@ for (let estudiante of arr) {
         sumaNotas += estudiante[i];
         cantidadNotas++;
     }
-    
+
       promedio=sumaNotas/cantidadNotas
 
       if (promedio > mejorPromedio) {
@@ -72,5 +72,5 @@ for (let estudiante of arr) {
 }
 
 
-console.log(`Mejor estudiante: ${mejorEstudiante}, Promedio: ${mejorPromedio}`);
-console.log(`Peor estudiante: ${peorEstudiante}, Promedio: ${peorPromedio}`);
+console.log("Mejo estudiante "+mejorEstudiante+" con el promedio "+mejorPromedio);
+console.log("Peor estudiante "+peorEstudiante+" con el promedio "+peorPromedio);
