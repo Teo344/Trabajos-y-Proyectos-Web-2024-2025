@@ -140,7 +140,7 @@ console.log(persona5);
 //3. Iterar sobre las propiedades. 
 for(nombrePropiedad in persona5){
     console.log(nombrePropiedad);
-    console.log(persona5[nombrePropiedad]);
+    console.log(persona5[nombrePropiedad]); 
 }
 
 for (let clave in persona5){
