@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cambio de Imágenes en JavaScript</title>
+</head>
+
+<body>
+
+    <button id="btnMostrar" onclick="mostrar()">Cambiar</button>
+    <br>
+    <div class="container">
+        <h1 id="palabra">Empezando</h1>
+    </div>
+    <br>
+    <img src="../Clase 20-01-2025/sticker_1.png" alt="imagen" id="imagen" width="300">
+
+
+    <script>
+        function mostrar() {
+            document.getElementById('palabra').innerHTML = 'Cambiando';
+            let index = 0;
+            const imagen = document.getElementById('imagen');
+            const rutas = [
+                '../Clase 20-01-2025/sticker_1.png',
+                '../Clase 20-01-2025/sticker2.jpg',
+                '../Clase 20-01-2025/sticker3.jpg',
+                '../Clase 20-01-2025/sticker4.jpeg'
+            ];
+
+            setInterval(() => {
+                index++;
+                if (index==rutas.length){
+                    index=0;
+                    imagen.src = rutas[index];
+                }
+                imagen.src = rutas[index];
+            }, 3000);
+        }
+    </script>
+
+</body>
+
+</html>

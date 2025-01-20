@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .titles {
+            color: magenta;
+        }
+    </style>
+    <title>Manejo de DOOM en JavaScript</title>
+</head>
+
+
+
+<body>
+    <h1 id="titulo" class="titles">Manejo de DOOM en JavaScript</h1>
+    <h1 id="titulo2" class="titles">Manejo de DOOM en JavaScript 2</h1>
+
+    <button id="btnMostrar" onclick="mostrar()" , type="submit">Mostrar Valores</button>
+    <br>
+
+    <img src="img/imagen.jpg" alt="imagen" id="imagen">
+
+
+
+
+
+    <script>
+        //document.write('Saludos desdde write');
+        /*
+        function mostrar(){
+            document.write('Adios!'); //Aqui puede sobreescribir y eliminar todo lo que habia antes
+        }*/
+
+        function mostrar() {
+            document.getElementById('imagen').sr = 'img/imagen2.jpg';
+        }
+
+
+    </script>
+
+
+
+</body>
+
+
+</html>
