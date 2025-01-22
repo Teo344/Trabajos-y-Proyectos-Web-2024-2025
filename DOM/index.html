@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Manejo de Eventos</title>
+</head>
+
+
+<body>
+    <h1 id="titulo" >Evento addListener </h1>
+
+    <br>
+    <br>
+
+    <form id="formulario">
+        Nombre: <input type="text" id="nombre">
+
+        <br>
+        <br>
+
+        Apellido: <input type="text" id="apellido">
+    </form>
+
+
+    <script>
+
+
+        let formulario = document.getElementById('formulario');
+
+        formulario.addEventListener('focus', (evento)=>{
+            evento.target.style.backgroundColor = "pink";
+        },true); //Utilizaom suna funcion callback
+        formulario.addEventListener('blur', (evento)=>{
+            evento.target.style.backgroundColor = "white";
+        },true); //Utilizaom suna funcion callback
+
+
+
+
+        function cambiar(evento) {
+            let componente = evento.target; 
+            componente.style.backgroundColor = "yellow";
+        }
+
+        function regresar(evento) {
+            let componente = evento.target;
+            componente.style.backgroundColor = "white";
+        }
+
+    </script>
+
+
+
+</body>
+</html>

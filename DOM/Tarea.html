@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="estilos.css">
+    <title>DOM TALLER</title>
+</head>
+
+
+
+<body>
+    <h1 id="tituloPrincipal">Título Principal</h1>
+
+    <button id="btnConfiguracion" onclick="configuracion()"> Mostrar Panel</button>
+    <br>
+    <br>
+
+    <div id="panelConfiguracion" style="display: none;">
+        <select id="seleccionColor" onchange="cambiarColor()">
+            <option value="white" selected>Claro</option>
+            <option value="black">Oscuro</option>
+            <option value="blue">Azul</option>
+        </select>
+
+        <br>
+        <br>
+        <br>
+        <label for="tituloInput">Escribe un nuevo título para la página:</label>
+        <input type="text" id="tituloInput" placeholder="Nuevo título">
+    
+        <br>
+        <br>
+        <br>
+
+
+        <label>
+            <input type="checkbox" id="habilitarComentarios">
+            Habilitar área de comentarios
+        </label>
+        <br>
+        <textarea id="comentariosArea" placeholder="Escribe tus comentarios..." disabled></textarea>
+        <br>
+        <br>
+
+        <label for="nuevoElemento">Añadir un elemento a la lista:</label>
+        <input type="text" id="nuevoElemento" placeholder="Nuevo elemento">
+        <button id="btnAgregarElemento">Agregar</button>
+        <br><br>    
+
+    </div>
+
+    <h2>Lista de elementos</h2>
+    <ul id="listaElementos">
+        <li>Elemento 1</li>
+        <li>Elemento 2</li>
+        <li>Elemento 3</li>
+    </ul>
+
+
+    <script>
+
+        const colorSelector = document.getElementById('seleccionColor');
+        colorSelector.addEventListener('change', () => { //permite realizar cambios en lo seleccionado o tarea
+            const selectedColor = colorSelector.value;
+            document.body.style.backgroundColor = selectedColor;
+        });
+
+        const tituloInput = document.getElementById('tituloInput');
+        const tituloPrincipal = document.getElementById('tituloPrincipal');
+
+        tituloInput.addEventListener('input', () => { //Permite el ingreso de nuevos textos en tiempo real
+            tituloPrincipal.textContent = tituloInput.value || "Título Principal";
+        });
+
+
+        const habilitarComentarios = document.getElementById('habilitarComentarios');
+        const comentariosArea = document.getElementById('comentariosArea');
+
+        habilitarComentarios.addEventListener('change', () => {
+            comentariosArea.disabled = !habilitarComentarios.checked; //permite el cambio de estado y poder desactivar o activar
+        });
+
+
+
+        const listaElementos = document.getElementById('listaElementos');
+        const nuevoElementoInput = document.getElementById('nuevoElemento');
+        const btnAgregarElemento = document.getElementById('btnAgregarElemento');
+
+
+        btnAgregarElemento.addEventListener('click', () => {
+            const nuevoTexto = nuevoElementoInput.value;
+            if (nuevoTexto) {
+                const nuevoLi = document.createElement('li');//permite crear el elemento necesario
+                nuevoLi.textContent = nuevoTexto;
+                listaElementos.appendChild(nuevoLi); //ste método agrega el nodo nuevoLi como un hijo del elemento listaElementos.
+                nuevoElementoInput.value = '';
+            }
+        });
+
+        listaElementos.addEventListener('click', (e) => {
+            if (e.target.tagName === 'LI') {
+                listaElementos.removeChild(e.target);
+            }
+        });
+
+
+
+
+
+
+        function configuracion() {
+
+            let panel = document.getElementById("panelConfiguracion");
+            let mensaje = document.getElementById("btnConfiguracion");
+
+            if (panel.style.display == "none") {
+                mensaje.innerHTML = "Ocultar Panel";
+                panel.style.display = "block";
+            } else {
+                panel.style.display = "none";
+                mensaje.innerHTML = "Mostrar Panel";
+            }
+        }
+
+    </script>
+
+
+</body>
+
+
+
+</html>
